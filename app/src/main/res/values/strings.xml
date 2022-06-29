@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Metro de Lima</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="transacciones_diarias">Transacciones diarias</string>
+    <string name="lista_de_transacciones">Lista de Transacciones</string>
+    <string name="saldo">Saldo</string>
+    <string name="when_the_transaction_was_done">When the transaction was done</string>
+    <string name="la_hora_en_la_que_se_hizo_la_transaccion">la hora en la que se hizo la transacción</string>
+    <string name="monto">Monto</string>
+    <string name="tipo_de_tarifa">Tipo de Tarifa</string>
+    <string name="tipo_de_transaccion">Tipo de Transacción</string>
+    <string name="referencia">Referencia</string>
+    <string name="cuanto_se_ha_usado_en_esta_transaccion">cuanto se ha usado en esta transacción</string>
+    <string name="cuanto_dinero_le_queda_al_usuario">cuánto dinero le queda al usuario</string>
+</resources>

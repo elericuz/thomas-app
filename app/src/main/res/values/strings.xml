@@ -23,8 +23,9 @@
     <string name="tarifa">Tarifa</string>
     <string name="lista_de_tarifas">Lista de tarifas</string>
     <string name="numero_de_serie">Número de Serie</string>
-    <string name="numero_de_tarjeta">Tarjeta</string>
+    <string name="numero_de_tarjeta">Tarjeta / DNI</string>
     <string name="buscar">Buscar</string>
     <string name="borrar">Borrar</string>
     <string name="obtiene_el_historial_de_la_tarjeta">Obtiene el historial de la tarjeta</string>
+    <string name="tarjeta_dni">%s/%s</string>
 </resources>

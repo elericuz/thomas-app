@@ -53,7 +53,7 @@
 
             <TextView
                 android:id="@+id/fare"
-                android:layout_width="wrap_content"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/subtitle_03"
                 android:textStyle="bold"
@@ -111,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="@{() -> clickListener.onClick(transaction)}"
-                android:text="@{transaction.external_number}"
+                android:text="@{@string/tarjeta_dni(transaction.external_number, transaction.document_id)}"
                 android:textSize="@dimen/subtitle_03"
                 app:layout_constraintBottom_toBottomOf="@+id/fare"
                 app:layout_constraintEnd_toEndOf="@+id/textView5"

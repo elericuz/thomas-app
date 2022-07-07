@@ -18,6 +18,7 @@ interface TransactionService {
     @Json
     @GET("transactions/get")
     fun getTransactions(
+        @Query("external_number") externalNumber: String,
         @Query("page") page: Int
     ): Deferred<TransactionModel>
 }

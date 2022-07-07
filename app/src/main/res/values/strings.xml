@@ -8,9 +8,23 @@
     <string name="when_the_transaction_was_done">When the transaction was done</string>
     <string name="la_hora_en_la_que_se_hizo_la_transaccion">la hora en la que se hizo la transacción</string>
     <string name="monto">Monto</string>
-    <string name="tipo_de_tarifa">Tipo de Tarifa</string>
-    <string name="tipo_de_transaccion">Tipo de Transacción</string>
+    <string name="tipo_de_tarifa">Tarifa</string>
+    <string name="tipo_de_transaccion">Transacción</string>
     <string name="referencia">Referencia</string>
     <string name="cuanto_se_ha_usado_en_esta_transaccion">cuanto se ha usado en esta transacción</string>
     <string name="cuanto_dinero_le_queda_al_usuario">cuánto dinero le queda al usuario</string>
+    <string name="filtra_las_transacciones">filtra las transacciones</string>
+    <string name="regresa_al_listado_de_transacciones">regresa al listado de transacciones</string>
+    <string name="filtro_de_transacciones">Filtro de Transacciones</string>
+    <string name="filtrar">Filtrar</string>
+    <string name="fecha">Fecha</string>
+    <string name="transacci_n">Transacción</string>
+    <string name="estacion">Estación</string>
+    <string name="tarifa">Tarifa</string>
+    <string name="lista_de_tarifas">Lista de tarifas</string>
+    <string name="numero_de_serie">Número de Serie</string>
+    <string name="numero_de_tarjeta">Tarjeta</string>
+    <string name="buscar">Buscar</string>
+    <string name="borrar">Borrar</string>
+    <string name="obtiene_el_historial_de_la_tarjeta">Obtiene el historial de la tarjeta</string>
 </resources>

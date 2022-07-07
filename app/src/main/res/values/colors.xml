@@ -16,5 +16,6 @@
     <color name="secondaryDarkColor">#003676</color>
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#ffffff</color>
+    <color name="cancelTextColor">#C65252</color>
 
 </resources>

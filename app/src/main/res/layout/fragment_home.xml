@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="home"
+            type="com.example.android.metrodelima.ui.HomeFragment" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -36,26 +43,96 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:background="@color/primaryColor"
+                        android:layout_height="136dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
-                        <TextView
-                            android:id="@+id/title"
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/constraintLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:background="@color/primaryColor"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:text="@string/transacciones_diarias"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/title_01"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageButton
+                                android:id="@+id/filterButton"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginEnd="16dp"
+                                android:background="@drawable/action_button"
+                                android:contentDescription="@string/filtra_las_transacciones"
+                                android:onClick="@{() -> home.filterClick()}"
+                                android:paddingHorizontal="0dp"
+                                android:paddingVertical="0dp"
+                                android:stateListAnimator="@animator/button_raise"
+                                app:layout_constraintBottom_toBottomOf="@+id/title"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/title"
+                                app:srcCompat="@drawable/ic_tune_48px" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <EditText
+                            android:id="@+id/externalNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="32dp"
+                            android:background="@drawable/edit_text_container"
+                            android:drawableStart="@drawable/ic_search_24px"
+                            android:drawablePadding="8dp"
+                            android:hint="@string/numero_de_tarjeta"
+                            android:inputType="number"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:textColor="@color/primaryColor"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+                        <Button
+                            android:id="@+id/externalNumberSearchButton"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:text="@string/transacciones_diarias"
-                            android:textSize="20sp"
-                            android:textColor="@color/white"
+                            android:onClick="@{() -> home.searchExternalNumber()}"
+                            android:text="@string/buscar"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/externalNumber"
+                            app:layout_constraintTop_toTopOf="@+id/externalNumber" />
+
+                        <Button
+                            android:id="@+id/clearExternalNumberSearchButton"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:textColor="@color/cancelTextColor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="32dp"
+                            android:onClick="@{() -> home.clearExternalNumber()}"
+                            android:text="@string/borrar"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintStart_toEndOf="@+id/externalNumberSearchButton"
+                            app:layout_constraintTop_toTopOf="@+id/externalNumberSearchButton" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -72,13 +149,12 @@
                 android:layout_marginEnd="8dp"
                 android:contentDescription="@string/lista_de_transacciones"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 tools:listitem="@layout/transaction_item" />
-
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

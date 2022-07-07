@@ -1,6 +1,7 @@
 package com.example.android.metrodelima
 
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import com.example.android.metrodelima.utils.Dates
 import timber.log.Timber
@@ -53,5 +54,14 @@ fun bindText(textView: TextView, text: String?) {
 fun bindTextUpperCase(textView: TextView, text: String?) {
     text?.let {
         textView.text = it.uppercase()
+    }
+}
+
+@BindingAdapter("colorTransaction")
+fun bindColorText(textView: TextView, text: String?) {
+    text?.let {
+        if (it.lowercase().trim() == "uso") {
+            textView.setTextColor(ContextCompat.getColor(textView.context, R.color.cancelTextColor))
+        }
     }
 }

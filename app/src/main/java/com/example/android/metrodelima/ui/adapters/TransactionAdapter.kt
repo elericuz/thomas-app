@@ -15,7 +15,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import timber.log.Timber
 
-class TransactionAdapter :
+class TransactionAdapter(private val clickListener: ClickListener) :
     PagingDataAdapter<Transaction, TransactionAdapter.ViewHolder>(DiffCallback),
     CoroutineScope by MainScope() {
 
@@ -23,7 +23,7 @@ class TransactionAdapter :
 
     companion object DiffCallback : DiffUtil.ItemCallback<Transaction>() {
         override fun areItemsTheSame(oldItem: Transaction, newItem: Transaction): Boolean {
-            return oldItem.reference_id == newItem.reference_id
+            return oldItem._id == newItem._id
         }
 
         override fun areContentsTheSame(oldItem: Transaction, newItem: Transaction): Boolean {
@@ -38,6 +38,7 @@ class TransactionAdapter :
                 AnimationUtils.loadAnimation(context, R.anim.item_animator)
             binding.transactionItem.startAnimation(animation)
             binding.transaction = transaction
+            binding.clickListener = clickListener
             binding.executePendingBindings()
         }
     }
@@ -59,4 +60,8 @@ class TransactionAdapter :
             Timber.e(e.localizedMessage)
         }
     }
+}
+
+class ClickListener(val clickListener: (transaction: Transaction) -> Unit) {
+    fun onClick(transaction: Transaction) = clickListener(transaction)
 }

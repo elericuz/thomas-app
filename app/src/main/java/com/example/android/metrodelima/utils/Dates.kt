@@ -18,6 +18,13 @@ class Dates {
                     .toZoneId()
             ).toLocalDateTime()
 
+        fun getTodayDate(pattern: String = "yyyy-MM-dd"): String {
+            val formatter = DateTimeFormatter.ofPattern(pattern, Locale.US)
+            var today = LocalDate.now()
+
+            return today.format(formatter)
+        }
+
         fun getLocalDateFromLong(date: Long): LocalDate? {
             return getLocalDateTimeFromLong(date).toLocalDate()
         }

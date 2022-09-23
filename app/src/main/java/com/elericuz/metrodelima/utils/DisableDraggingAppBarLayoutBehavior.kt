@@ -1,4 +1,4 @@
-package com.example.android.metrodelima.utils
+package com.elericuz.metrodelima.utils
 
 import android.content.Context
 import android.util.AttributeSet

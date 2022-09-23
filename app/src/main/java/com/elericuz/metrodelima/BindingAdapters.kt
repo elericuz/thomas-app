@@ -1,14 +1,10 @@
-package com.example.android.metrodelima
+package com.elericuz.metrodelima
 
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
-import com.example.android.metrodelima.utils.Dates
-import timber.log.Timber
-import java.text.SimpleDateFormat
+import com.elericuz.metrodelima.utils.Dates
 import java.time.Instant
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 @BindingAdapter("amount")
@@ -62,6 +58,8 @@ fun bindColorText(textView: TextView, text: String?) {
     text?.let {
         if (it.lowercase().trim() == "uso") {
             textView.setTextColor(ContextCompat.getColor(textView.context, R.color.cancelTextColor))
+        } else {
+            textView.setTextColor(ContextCompat.getColor(textView.context, R.color.primaryTextColor))
         }
     }
 }

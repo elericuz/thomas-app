@@ -1,26 +1,20 @@
-package com.example.android.metrodelima.ui
+package com.elericuz.metrodelima.ui
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.os.Bundle
-import android.util.TypedValue
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import androidx.annotation.AttrRes
-import androidx.core.util.Pair
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.android.metrodelima.R
-import com.example.android.metrodelima.databinding.FragmentFilterBinding
-import com.example.android.metrodelima.ui.viewmodels.TransactionViewModel
-import com.example.android.metrodelima.utils.Dates
+import com.elericuz.metrodelima.R
+import com.elericuz.metrodelima.ui.viewmodels.TransactionViewModel
+import com.elericuz.metrodelima.utils.Dates
+import com.elericuz.metrodelima.databinding.FragmentFilterBinding
 import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.MaterialDatePicker
-import timber.log.Timber
 import java.util.*
 
 class FilterFragment : Fragment() {

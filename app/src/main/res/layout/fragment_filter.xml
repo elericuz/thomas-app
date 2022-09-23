@@ -6,7 +6,7 @@
     <data>
         <variable
             name="filter"
-            type="com.example.android.metrodelima.ui.FilterFragment" />
+            type="com.elericuz.metrodelima.ui.FilterFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

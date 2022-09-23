@@ -1,4 +1,4 @@
-package com.example.android.metrodelima
+package com.elericuz.metrodelima
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

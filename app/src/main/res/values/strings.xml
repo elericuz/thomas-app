@@ -28,4 +28,11 @@
     <string name="borrar">Borrar</string>
     <string name="obtiene_el_historial_de_la_tarjeta">Obtiene el historial de la tarjeta</string>
     <string name="tarjeta_dni">%s/%s</string>
+    <string name="tarjeta_dni_description">%s/%s a las %s</string>
+    <string name="logo_del_metro_en_lima">Logo del Metro en Lima</string>
+    <string name="metro_en_lima">Metro en Lima</string>
+    <string name="ingresa_el_n_mero_de_tu_tarjeta_o_dni">Ingresa el número de tu tarjeta o DNI</string>
+    <string name="volver_a_la_pantalla_anterior">volver a la pantalla anterior</string>
+    <string name="no_hay_datos_registrados_aun_para_esta_tarjeta_o_dni">No hay datos registrados aún para esta tarjeta o DNI</string>
+    <string name="card_number_not_entered">Debes ingresar un número de tarjeta o DNI para poder buscarlo</string>
 </resources>

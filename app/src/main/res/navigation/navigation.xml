@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/homeDestination">
+    app:startDestination="@id/searchDestination">
 
     <fragment
         android:id="@+id/homeDestination"
-        android:name="com.example.android.metrodelima.ui.HomeFragment"
+        android:name="com.elericuz.metrodelima.ui.HomeFragment"
         android:label="HomeFragment">
         <action
             android:id="@+id/action_home_to_filter"
@@ -16,9 +16,23 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_home_to_search"
+            app:destination="@id/searchDestination" />
+        <argument
+            android:name="externalNumber"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/filterDestination"
-        android:name="com.example.android.metrodelima.ui.FilterFragment"
+        android:name="com.elericuz.metrodelima.ui.FilterFragment"
         android:label="FilterFragment" />
+    <fragment
+        android:id="@+id/searchDestination"
+        android:name="com.elericuz.metrodelima.ui.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_search_to_home"
+            app:destination="@id/homeDestination" />
+    </fragment>
 </navigation>

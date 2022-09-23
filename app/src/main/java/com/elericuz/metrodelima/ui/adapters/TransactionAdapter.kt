@@ -1,4 +1,4 @@
-package com.example.android.metrodelima.ui.adapters
+package com.elericuz.metrodelima.ui.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,14 +8,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android.metrodelima.R
-import com.example.android.metrodelima.databinding.TransactionItemBinding
-import com.example.android.metrodelima.models.Transaction
+import com.elericuz.metrodelima.R
+import com.elericuz.metrodelima.databinding.TransactionItemBinding
+import com.elericuz.metrodelima.models.Transaction
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import timber.log.Timber
 
-class TransactionAdapter(private val clickListener: ClickListener) :
+class TransactionAdapter :
     PagingDataAdapter<Transaction, TransactionAdapter.ViewHolder>(DiffCallback),
     CoroutineScope by MainScope() {
 
@@ -38,7 +38,6 @@ class TransactionAdapter(private val clickListener: ClickListener) :
                 AnimationUtils.loadAnimation(context, R.anim.item_animator)
             binding.transactionItem.startAnimation(animation)
             binding.transaction = transaction
-            binding.clickListener = clickListener
             binding.executePendingBindings()
         }
     }
@@ -60,8 +59,4 @@ class TransactionAdapter(private val clickListener: ClickListener) :
             Timber.e(e.localizedMessage)
         }
     }
-}
-
-class ClickListener(val clickListener: (transaction: Transaction) -> Unit) {
-    fun onClick(transaction: Transaction) = clickListener(transaction)
 }

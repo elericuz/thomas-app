@@ -12,10 +12,10 @@
     <color name="primaryLightColor">#4c93c2</color>
     <color name="primaryDarkColor">#003b63</color>
     <color name="secondaryColor">#1b5fa5</color>
-    <color name="secondaryLightColor">#5a8cd7</color>
+    <color name="secondaryLightColor">#204F97</color>
     <color name="secondaryDarkColor">#003676</color>
-    <color name="primaryTextColor">#ffffff</color>
-    <color name="secondaryTextColor">#ffffff</color>
-    <color name="cancelTextColor">#C65252</color>
+    <color name="primaryTextColor">#707070</color>
+    <color name="secondaryTextColor">#6C6C6C</color>
+    <color name="cancelTextColor">#B65252</color>
 
 </resources>

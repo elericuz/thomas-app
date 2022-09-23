@@ -1,8 +1,7 @@
-package com.example.android.metrodelima.models
+package com.elericuz.metrodelima.models
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
-import java.util.*
 
 data class TransactionModel(val results: Result) {}
 

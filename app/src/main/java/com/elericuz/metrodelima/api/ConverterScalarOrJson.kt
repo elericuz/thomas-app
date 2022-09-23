@@ -1,4 +1,4 @@
-package com.example.android.metrodelima.api
+package com.elericuz.metrodelima.api
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

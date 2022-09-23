@@ -1,9 +1,9 @@
-package com.example.android.metrodelima.api
+package com.elericuz.metrodelima.api
 
-import com.example.android.metrodelima.Constants.BASE_URL
-import com.example.android.metrodelima.Constants.LOGGER_LEVEL
-import com.example.android.metrodelima.Constants.LOGGER_TAG
-import com.example.android.metrodelima.models.TransactionModel
+import com.elericuz.metrodelima.Constants.BASE_URL
+import com.elericuz.metrodelima.Constants.LOGGER_LEVEL
+import com.elericuz.metrodelima.Constants.LOGGER_TAG
+import com.elericuz.metrodelima.models.TransactionModel
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import kotlinx.coroutines.Deferred
 import okhttp3.OkHttpClient

@@ -1,6 +1,7 @@
-package com.example.android.metrodelima.ui.viewmodels
+package com.elericuz.metrodelima.ui.viewmodels
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,11 +10,16 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.example.android.metrodelima.Constants.PAGE_SIZE
-import com.example.android.metrodelima.models.Transaction
-import com.example.android.metrodelima.pagination.PagingSource
+import com.elericuz.metrodelima.Constants.PAGE_SIZE
+import com.elericuz.metrodelima.models.Transaction
+import com.elericuz.metrodelima.pagination.PagingSource
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.count
 import kotlinx.coroutines.flow.emptyFlow
+import kotlinx.coroutines.flow.onEmpty
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class TransactionViewModel(application: Application) : AndroidViewModel(application) {
     var transactions: Flow<PagingData<Transaction>> = emptyFlow()
@@ -27,15 +33,11 @@ class TransactionViewModel(application: Application) : AndroidViewModel(applicat
     private var _currentDateFormatted = MutableLiveData<String>()
     val currentDateFormatted: LiveData<String> get() = _currentDateFormatted
 
-    init {
-        getTransactions()
-    }
-
     fun getTransactions() {
-            transactions = Pager(
-                PagingConfig(pageSize = PAGE_SIZE),
-                pagingSourceFactory = { PagingSource(externalNumber.value!!) }
-            ).flow.cachedIn(viewModelScope)
+        transactions = Pager(
+            PagingConfig(pageSize = PAGE_SIZE),
+            pagingSourceFactory = { PagingSource(externalNumber.value!!) }
+        ).flow.cachedIn(viewModelScope)
     }
 
     fun updateExternalNumber(value: String) {

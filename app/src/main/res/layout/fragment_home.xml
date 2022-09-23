@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="home"
-            type="com.example.android.metrodelima.ui.HomeFragment" />
+            type="com.elericuz.metrodelima.ui.HomeFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,7 +31,7 @@
                 android:fitsSystemWindows="false"
                 android:outlineAmbientShadowColor="@color/white"
                 android:outlineSpotShadowColor="@color/white"
-                app:layout_behavior="com.example.android.metrodelima.utils.DisableDraggingAppBarLayoutBehavior"
+                app:layout_behavior="com.elericuz.metrodelima.utils.DisableDraggingAppBarLayoutBehavior"
                 app:liftOnScroll="true">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -43,7 +42,7 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="136dp"
+                        android:layout_height="wrap_content"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -58,81 +57,92 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
+                            <ImageButton
+                                android:id="@+id/backButton"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                                android:tint="@color/primaryColor"
+                                android:background="@drawable/action_back_button"
+                                android:stateListAnimator="@animator/button_raise"
+                                android:contentDescription="@string/volver_a_la_pantalla_anterior"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="UseAppTint" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <TextView
+                                    android:id="@+id/textView13"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/numero_de_tarjeta"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/title_01"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.578" />
+
+                                <TextView
+                                    android:id="@+id/externalNumber"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/title_01"
+                                    app:layout_constraintStart_toEndOf="@+id/textView13"
+                                    app:layout_constraintTop_toTopOf="@+id/textView13"
+                                    tools:text="@string/numero_de_tarjeta" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
                             <TextView
                                 android:id="@+id/title"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
                                 android:text="@string/transacciones_diarias"
                                 android:textColor="@color/white"
-                                android:textSize="@dimen/title_01"
+                                android:textSize="@dimen/title_02"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/noRecordsFoundContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="350dp"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="64dp"
+                                android:layout_marginEnd="64dp"
+                                android:text="@string/no_hay_datos_registrados_aun_para_esta_tarjeta_o_dni"
+                                android:textAlignment="center"
+                                android:textColor="@color/primaryColor"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
-
-                            <ImageButton
-                                android:id="@+id/filterButton"
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
-                                android:layout_marginEnd="16dp"
-                                android:background="@drawable/action_button"
-                                android:contentDescription="@string/filtra_las_transacciones"
-                                android:onClick="@{() -> home.filterClick()}"
-                                android:paddingHorizontal="0dp"
-                                android:paddingVertical="0dp"
-                                android:stateListAnimator="@animator/button_raise"
-                                app:layout_constraintBottom_toBottomOf="@+id/title"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="@+id/title"
-                                app:srcCompat="@drawable/ic_tune_48px" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <EditText
-                            android:id="@+id/externalNumber"
-                            android:layout_width="wrap_content"
-                            android:layout_height="48dp"
-                            android:layout_marginStart="32dp"
-                            android:background="@drawable/edit_text_container"
-                            android:drawableStart="@drawable/ic_search_24px"
-                            android:drawablePadding="8dp"
-                            android:hint="@string/numero_de_tarjeta"
-                            android:inputType="number"
-                            android:paddingStart="8dp"
-                            android:paddingEnd="8dp"
-                            android:textColor="@color/primaryColor"
-                            android:textSize="16sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
-                        <Button
-                            android:id="@+id/externalNumberSearchButton"
-                            style="@style/Widget.MaterialComponents.Button.TextButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:onClick="@{() -> home.searchExternalNumber()}"
-                            android:text="@string/buscar"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/externalNumber"
-                            app:layout_constraintTop_toTopOf="@+id/externalNumber" />
-
-                        <Button
-                            android:id="@+id/clearExternalNumberSearchButton"
-                            style="@style/Widget.MaterialComponents.Button.TextButton"
-                            android:textColor="@color/cancelTextColor"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="32dp"
-                            android:onClick="@{() -> home.clearExternalNumber()}"
-                            android:text="@string/borrar"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/externalNumberSearchButton"
-                            app:layout_constraintTop_toTopOf="@+id/externalNumberSearchButton" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
